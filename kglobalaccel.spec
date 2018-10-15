@@ -5,26 +5,23 @@
 # Source0 file verified with key 0x58D0EE648A48B3BB (faure@kde.org)
 #
 Name     : kglobalaccel
-Version  : 5.50.0
-Release  : 5
-URL      : https://download.kde.org/stable/frameworks/5.50/kglobalaccel-5.50.0.tar.xz
-Source0  : https://download.kde.org/stable/frameworks/5.50/kglobalaccel-5.50.0.tar.xz
-Source99 : https://download.kde.org/stable/frameworks/5.50/kglobalaccel-5.50.0.tar.xz.sig
+Version  : 5.51.0
+Release  : 6
+URL      : https://download.kde.org/stable/frameworks/5.51/kglobalaccel-5.51.0.tar.xz
+Source0  : https://download.kde.org/stable/frameworks/5.51/kglobalaccel-5.51.0.tar.xz
+Source99 : https://download.kde.org/stable/frameworks/5.51/kglobalaccel-5.51.0.tar.xz.sig
 Summary  : No detailed summary available
 Group    : Development/Tools
 License  : LGPL-2.1
-Requires: kglobalaccel-bin
-Requires: kglobalaccel-lib
-Requires: kglobalaccel-data
-Requires: kglobalaccel-license
+Requires: kglobalaccel-bin = %{version}-%{release}
+Requires: kglobalaccel-data = %{version}-%{release}
+Requires: kglobalaccel-lib = %{version}-%{release}
+Requires: kglobalaccel-license = %{version}-%{release}
 BuildRequires : buildreq-cmake
 BuildRequires : buildreq-kde
-BuildRequires : kcrash-dev
-BuildRequires : kdbusaddons-dev
-BuildRequires : kwindowsystem-dev
+BuildRequires : extra-cmake-modules pkgconfig(xcb) xcb-util-cursor-dev xcb-util-image-dev xcb-util-keysyms-dev xcb-util-renderutil-dev xcb-util-wm-dev xcb-util-dev
 BuildRequires : libX11-dev libICE-dev libSM-dev libXau-dev libXcomposite-dev libXcursor-dev libXdamage-dev libXdmcp-dev libXext-dev libXfixes-dev libXft-dev libXi-dev libXinerama-dev libXi-dev libXmu-dev libXpm-dev libXrandr-dev libXrender-dev libXres-dev libXScrnSaver-dev libXt-dev libXtst-dev libXv-dev libXxf86misc-dev libXxf86vm-dev
-BuildRequires : qtbase-dev qtbase-extras mesa-dev
-BuildRequires : qtx11extras-dev
+BuildRequires : qtbase-dev mesa-dev
 BuildRequires : xcb-util-keysyms-dev
 
 %description
@@ -38,8 +35,8 @@ need focus for them to be activated.
 %package bin
 Summary: bin components for the kglobalaccel package.
 Group: Binaries
-Requires: kglobalaccel-data
-Requires: kglobalaccel-license
+Requires: kglobalaccel-data = %{version}-%{release}
+Requires: kglobalaccel-license = %{version}-%{release}
 
 %description bin
 bin components for the kglobalaccel package.
@@ -56,10 +53,10 @@ data components for the kglobalaccel package.
 %package dev
 Summary: dev components for the kglobalaccel package.
 Group: Development
-Requires: kglobalaccel-lib
-Requires: kglobalaccel-bin
-Requires: kglobalaccel-data
-Provides: kglobalaccel-devel
+Requires: kglobalaccel-lib = %{version}-%{release}
+Requires: kglobalaccel-bin = %{version}-%{release}
+Requires: kglobalaccel-data = %{version}-%{release}
+Provides: kglobalaccel-devel = %{version}-%{release}
 
 %description dev
 dev components for the kglobalaccel package.
@@ -68,8 +65,8 @@ dev components for the kglobalaccel package.
 %package lib
 Summary: lib components for the kglobalaccel package.
 Group: Libraries
-Requires: kglobalaccel-data
-Requires: kglobalaccel-license
+Requires: kglobalaccel-data = %{version}-%{release}
+Requires: kglobalaccel-license = %{version}-%{release}
 
 %description lib
 lib components for the kglobalaccel package.
@@ -84,25 +81,25 @@ license components for the kglobalaccel package.
 
 
 %prep
-%setup -q -n kglobalaccel-5.50.0
+%setup -q -n kglobalaccel-5.51.0
 
 %build
 export http_proxy=http://127.0.0.1:9/
 export https_proxy=http://127.0.0.1:9/
 export no_proxy=localhost,127.0.0.1,0.0.0.0
 export LANG=C
-export SOURCE_DATE_EPOCH=1536432922
-mkdir clr-build
+export SOURCE_DATE_EPOCH=1539628947
+mkdir -p clr-build
 pushd clr-build
 %cmake ..
-make  %{?_smp_mflags}
+make  %{?_smp_mflags} VERBOSE=1
 popd
 
 %install
-export SOURCE_DATE_EPOCH=1536432922
+export SOURCE_DATE_EPOCH=1539628947
 rm -rf %{buildroot}
-mkdir -p %{buildroot}/usr/share/doc/kglobalaccel
-cp COPYING.LIB %{buildroot}/usr/share/doc/kglobalaccel/COPYING.LIB
+mkdir -p %{buildroot}/usr/share/package-licenses/kglobalaccel
+cp COPYING.LIB %{buildroot}/usr/share/package-licenses/kglobalaccel/COPYING.LIB
 pushd clr-build
 %make_install
 popd
@@ -243,11 +240,11 @@ popd
 %files lib
 %defattr(-,root,root,-)
 /usr/lib64/libKF5GlobalAccel.so.5
-/usr/lib64/libKF5GlobalAccel.so.5.50.0
+/usr/lib64/libKF5GlobalAccel.so.5.51.0
 /usr/lib64/libKF5GlobalAccelPrivate.so.5
-/usr/lib64/libKF5GlobalAccelPrivate.so.5.50.0
+/usr/lib64/libKF5GlobalAccelPrivate.so.5.51.0
 /usr/lib64/qt5/plugins/org.kde.kglobalaccel5.platforms/KF5GlobalAccelPrivateXcb.so
 
 %files license
-%defattr(-,root,root,-)
-/usr/share/doc/kglobalaccel/COPYING.LIB
+%defattr(0644,root,root,0755)
+/usr/share/package-licenses/kglobalaccel/COPYING.LIB
