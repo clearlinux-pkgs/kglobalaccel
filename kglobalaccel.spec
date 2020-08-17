@@ -5,11 +5,11 @@
 # Source0 file verified with key 0x58D0EE648A48B3BB (faure@kde.org)
 #
 Name     : kglobalaccel
-Version  : 5.71.0
-Release  : 32
-URL      : https://download.kde.org/stable/frameworks/5.71/kglobalaccel-5.71.0.tar.xz
-Source0  : https://download.kde.org/stable/frameworks/5.71/kglobalaccel-5.71.0.tar.xz
-Source1  : https://download.kde.org/stable/frameworks/5.71/kglobalaccel-5.71.0.tar.xz.sig
+Version  : 5.73.0
+Release  : 33
+URL      : https://download.kde.org/stable/frameworks/5.73/kglobalaccel-5.73.0.tar.xz
+Source0  : https://download.kde.org/stable/frameworks/5.73/kglobalaccel-5.73.0.tar.xz
+Source1  : https://download.kde.org/stable/frameworks/5.73/kglobalaccel-5.73.0.tar.xz.sig
 Summary  : Add support for global workspace shortcuts
 Group    : Development/Tools
 License  : LGPL-2.1
@@ -88,15 +88,15 @@ license components for the kglobalaccel package.
 
 
 %prep
-%setup -q -n kglobalaccel-5.71.0
-cd %{_builddir}/kglobalaccel-5.71.0
+%setup -q -n kglobalaccel-5.73.0
+cd %{_builddir}/kglobalaccel-5.73.0
 
 %build
 export http_proxy=http://127.0.0.1:9/
 export https_proxy=http://127.0.0.1:9/
 export no_proxy=localhost,127.0.0.1,0.0.0.0
 export LANG=C.UTF-8
-export SOURCE_DATE_EPOCH=1592250037
+export SOURCE_DATE_EPOCH=1597698172
 mkdir -p clr-build
 pushd clr-build
 export GCC_IGNORE_WERROR=1
@@ -108,14 +108,14 @@ export FCFLAGS="$FFLAGS -O3 -ffat-lto-objects -flto=4 "
 export FFLAGS="$FFLAGS -O3 -ffat-lto-objects -flto=4 "
 export CXXFLAGS="$CXXFLAGS -O3 -ffat-lto-objects -flto=4 "
 %cmake ..
-make  %{?_smp_mflags}  VERBOSE=1
+make  %{?_smp_mflags}
 popd
 
 %install
-export SOURCE_DATE_EPOCH=1592250037
+export SOURCE_DATE_EPOCH=1597698172
 rm -rf %{buildroot}
 mkdir -p %{buildroot}/usr/share/package-licenses/kglobalaccel
-cp %{_builddir}/kglobalaccel-5.71.0/COPYING.LIB %{buildroot}/usr/share/package-licenses/kglobalaccel/9a1929f4700d2407c70b507b3b2aaf6226a9543c
+cp %{_builddir}/kglobalaccel-5.73.0/COPYING.LIB %{buildroot}/usr/share/package-licenses/kglobalaccel/9a1929f4700d2407c70b507b3b2aaf6226a9543c
 pushd clr-build
 %make_install
 popd
@@ -234,6 +234,7 @@ popd
 /usr/share/locale/zh_HK/LC_MESSAGES/kglobalaccel5_qt.qm
 /usr/share/locale/zh_TW/LC_MESSAGES/kglobalaccel5_qt.qm
 /usr/share/qlogging-categories5/kglobalaccel.categories
+/usr/share/qlogging-categories5/kglobalaccel.renamecategories
 
 %files dev
 %defattr(-,root,root,-)
@@ -256,9 +257,9 @@ popd
 %files lib
 %defattr(-,root,root,-)
 /usr/lib64/libKF5GlobalAccel.so.5
-/usr/lib64/libKF5GlobalAccel.so.5.71.0
+/usr/lib64/libKF5GlobalAccel.so.5.73.0
 /usr/lib64/libKF5GlobalAccelPrivate.so.5
-/usr/lib64/libKF5GlobalAccelPrivate.so.5.71.0
+/usr/lib64/libKF5GlobalAccelPrivate.so.5.73.0
 /usr/lib64/qt5/plugins/org.kde.kglobalaccel5.platforms/KF5GlobalAccelPrivateXcb.so
 
 %files license
