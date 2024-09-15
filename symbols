@@ -1,46 +1,4 @@
-libKF6GlobalAccel.so.6:KGlobalAccel::qt_metacall(QMetaObject::Call, int, void**)
-libKF6GlobalAccel.so.6:KGlobalAccel::qt_metacast(char const*)
-libKF6GlobalAccel.so.6:KGlobalAccel::setShortcut(QAction*, QList<QKeySequence> const&, KGlobalAccel::GlobalShortcutLoading)
-libKF6GlobalAccel.so.6:KGlobalAccel::cleanComponent(QString const&)
-libKF6GlobalAccel.so.6:KGlobalAccel::isComponentActive(QString const&)
-libKF6GlobalAccel.so.6:KGlobalAccel::setGlobalShortcut(QAction*, QKeySequence const&)
-libKF6GlobalAccel.so.6:KGlobalAccel::setGlobalShortcut(QAction*, QList<QKeySequence> const&)
 libKF6GlobalAccel.so.6:KGlobalAccel::removeAllShortcuts(QAction*)
-libKF6GlobalAccel.so.6:KGlobalAccel::setDefaultShortcut(QAction*, QList<QKeySequence> const&, KGlobalAccel::GlobalShortcutLoading)
-libKF6GlobalAccel.so.6:KGlobalAccel::globalShortcutsByKey(QKeySequence const&, KGlobalAccel::MatchType)
-libKF6GlobalAccel.so.6:KGlobalAccel::globalShortcutChanged(QAction*, QKeySequence const&)
-libKF6GlobalAccel.so.6:KGlobalAccel::stealShortcutSystemwide(QKeySequence const&)
-libKF6GlobalAccel.so.6:KGlobalAccel::isGlobalShortcutAvailable(QKeySequence const&, QString const&)
-libKF6GlobalAccel.so.6:KGlobalAccel::globalShortcutActiveChanged(QAction*, bool)
-libKF6GlobalAccel.so.6:KGlobalAccel::promptStealShortcutSystemwide(QWidget*, QList<KGlobalShortcutInfo> const&, QKeySequence const&)
 libKF6GlobalAccel.so.6:KGlobalAccel::self()
-libKF6GlobalAccel.so.6:KGlobalShortcutInfo::qt_metacall(QMetaObject::Call, int, void**)
-libKF6GlobalAccel.so.6:KGlobalShortcutInfo::qt_metacast(char const*)
-libKF6GlobalAccel.so.6:KGlobalShortcutInfo::KGlobalShortcutInfo(KGlobalShortcutInfo const&)
-libKF6GlobalAccel.so.6:KGlobalShortcutInfo::KGlobalShortcutInfo()
-libKF6GlobalAccel.so.6:KGlobalShortcutInfo::KGlobalShortcutInfo(KGlobalShortcutInfo const&)
 libKF6GlobalAccel.so.6:KGlobalShortcutInfo::KGlobalShortcutInfo()
 libKF6GlobalAccel.so.6:KGlobalShortcutInfo::~KGlobalShortcutInfo()
-libKF6GlobalAccel.so.6:KGlobalShortcutInfo::~KGlobalShortcutInfo()
-libKF6GlobalAccel.so.6:KGlobalShortcutInfo::~KGlobalShortcutInfo()
-libKF6GlobalAccel.so.6:KGlobalShortcutInfo::operator=(KGlobalShortcutInfo const&)
-libKF6GlobalAccel.so.6:KGlobalAccel::metaObject() const
-libKF6GlobalAccel.so.6:KGlobalAccel::hasShortcut(QAction const*) const
-libKF6GlobalAccel.so.6:KGlobalAccel::globalShortcut(QString const&, QString const&) const
-libKF6GlobalAccel.so.6:KGlobalAccel::defaultShortcut(QAction const*) const
-libKF6GlobalAccel.so.6:KGlobalAccel::shortcut(QAction const*) const
-libKF6GlobalAccel.so.6:KGlobalShortcutInfo::metaObject() const
-libKF6GlobalAccel.so.6:KGlobalShortcutInfo::uniqueName() const
-libKF6GlobalAccel.so.6:KGlobalShortcutInfo::defaultKeys() const
-libKF6GlobalAccel.so.6:KGlobalShortcutInfo::friendlyName() const
-libKF6GlobalAccel.so.6:KGlobalShortcutInfo::contextUniqueName() const
-libKF6GlobalAccel.so.6:KGlobalShortcutInfo::componentUniqueName() const
-libKF6GlobalAccel.so.6:KGlobalShortcutInfo::contextFriendlyName() const
-libKF6GlobalAccel.so.6:KGlobalShortcutInfo::componentFriendlyName() const
-libKF6GlobalAccel.so.6:KGlobalShortcutInfo::keys() const
-libKF6GlobalAccel.so.6:operator<<(QDBusArgument&, QKeySequence const&)
-libKF6GlobalAccel.so.6:operator<<(QDBusArgument&, KGlobalShortcutInfo const&)
-libKF6GlobalAccel.so.6:operator<<(QDBusArgument&, KGlobalAccel::MatchType const&)
-libKF6GlobalAccel.so.6:operator>>(QDBusArgument const&, QKeySequence&)
-libKF6GlobalAccel.so.6:operator>>(QDBusArgument const&, KGlobalShortcutInfo&)
-libKF6GlobalAccel.so.6:operator>>(QDBusArgument const&, KGlobalAccel::MatchType&)
